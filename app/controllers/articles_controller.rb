@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
     def show
-        
+        flash[:notice] = "Article showing"
         @article = Article.find(params[:id])
     end
 
@@ -37,6 +37,10 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
-
+        @article = Article.find(params[:id])
+        @article.destroy
+        params[:id] = nil
+        flash[:notice] = "Art has been deleted"
+        redirect_to :action => :index
     end
 end
