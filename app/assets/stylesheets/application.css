@@ -52,3 +52,13 @@
     height: 425px;
     width: 100%;
   }
+
+
+  #page-content {
+    flex: 1 0 auto;
+    background-color: lightgrey;
+  }
+  
+  #sticky-footer {
+    flex-shrink: none;
+  }

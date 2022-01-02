@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
-        #@article = Article.find(params[:id])
+        @article = Article.find(params[:id])
         @article.destroy
         params[:id] = nil
         flash[:notice] = "Art has been deleted"
