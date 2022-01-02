@@ -16,11 +16,12 @@
         <td><%= article.description %></td>
         <td><%= link_to 'Show', article_path(article) %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Delete Article', articles_delete_url(article), method: :delete %> </td>
+        <td><%= link_to 'Delete Article', articles_delete_url(article), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
          </tr>
     <% end %>
     </tbody>
 </table>
 
-
-<%= link_to 'Create new article', article_path(article) %>
+<p>
+    <%= link_to 'Create new article', new_article_path %>
+</p>
