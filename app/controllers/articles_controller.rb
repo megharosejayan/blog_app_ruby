@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
     # comments below are the ones replaced with set_article
 
     def show
-        flash[:notice] = "Article showing"
+        #flash[:notice] = "Article showing"
         #@article = Article.find(params[:id])
     end
 
@@ -18,17 +18,21 @@ class ArticlesController < ApplicationController
 
     def edit
         #@article = Article.find(params[:id])
+        if @article.errors.any?
+            flash[:notice] = "Error."
+        end
     end
 
     def create
         # previously (before article_params)
         # @article = Article.new(params.require(:article).permit(:title, :description))
         @article = Article.new(article_params)
+        @article.user = User.first
         if @article.save
-            flash[:notice] = "Article succes"
+            flash[:notice] = "Article was created successfully"
             redirect_to article_path(@article)
         else
-            redirect_to "new", allow_other_host: true
+            redirect_to :action => :new
         end
     end
 
@@ -38,7 +42,7 @@ class ArticlesController < ApplicationController
           flash[:notice] = "Article was updated successfully."
           redirect_to @article
         else
-          render 'edit'
+            redirect_to :action => :edit
         end
     end
 
