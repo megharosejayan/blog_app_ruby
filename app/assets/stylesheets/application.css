@@ -53,12 +53,20 @@
     width: 100%;
   }
 
-
+  html,
+  body {
+    height: 100%;
+  }
   #page-content {
     flex: 1 0 auto;
     background-color: lightgrey;
+    height: 100%;
   }
   
   #sticky-footer {
     flex-shrink: none;
+    position: fixed;
+    height: 75px;
+    bottom: 0;
+    width: 100%;
   }
