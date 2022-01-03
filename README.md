@@ -1,11 +1,13 @@
-Summary of changes:
+Summary of latest changes:
 
-- Added functionality for users to delete their own accounts using a destroy method in the users controller.
+- Navigation partial updated to display "(Admin)" for admin user accounts.
 
-- Added a link to delete account to the users' profile dropdown navigation option.
+- Article actions (edit and delete) made available to admins for all articles in both for articles index (rendering article partial) and articles show views.
 
-- Utilized a couple of existing methods (as before_action methods) to secure the newly created destroy action at controller level.
+- Added ability for admin users to delete other user accounts through the users index page.
 
+ - Embed ruby code in place of hard-coded 'success' in the messages partial. 'success' is returned if the key ('name') from the flash hash is 'notice' and 'danger' is returned otherwise. This gives the alert message the green or red color depending on the notice type.
+ 
 To note:
 
 Delete method directly doesnt word when passed as (method: :delete)
