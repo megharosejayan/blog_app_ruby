@@ -1,8 +1,10 @@
 Summary of changes:
 
-- Added require_same_user method to users controller.
+- Added functionality for users to delete their own accounts using a destroy method in the users controller.
 
-- Used require_same_user and require_user methods to restrict certain actions in the users controller.
+- Added a link to delete account to the users' profile dropdown navigation option.
+
+- Utilized a couple of existing methods (as before_action methods) to secure the newly created destroy action at controller level.
 
 To note:
 
@@ -17,6 +19,14 @@ So, create a seperate path in routes.rb(delete and get) for sessions_delete:
 
 In the view, write the embedded ruby code:
             <%= link_to 'Logout', sessions_delete_path(), method: :delete,class: "nav-link" %>
+
+
+For delete article:
+in view:
+<%= link_to 'Delete Article', articles_delete_url(@article), method: :delete %>
+in routes.rb:
+ delete 'articles/:id/delete' => 'articles#destroy', as: 'articles_delete'
+  get '/articles/:id/delete' => 'articles#destroy'
 
 For some reason, this works well and good.
 
