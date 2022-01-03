@@ -1,3 +1,13 @@
+Summary:
+
+- Moved the current_user and logged_in? authentication methods from application helper to application controller and declared them as helper methods so they can be used in views as well.
+
+- Updated the create action in articles controller so the logged in user is associated with the article being created instead of hardcoding the user.
+
+- Updated pages controller home action (root route) to redirect to articles index page if users are logged in.
+
+To note:
+
 Delete method directly doesnt word when passed as (method: :delete)
 
 Because the error shows "no get method for /logout" for some reason it wasnt taking the method as delete even though specified, hence checked for get which wasnt there.   
@@ -12,13 +22,4 @@ In the view, write the embedded ruby code:
 
 For some reason, this works well and good.
 
-Summary of changes:
-
-- Added current_user and logged_in? helper methods.
-
-- Modified the navigation partial and utilized these methods to display links based on logged in state.
-
-- Modified the users controller create action so users' are logged in once they sign-up.
-
-- Added set_user method and used it as before_action for show, edit and update actions in users controller.
 
