@@ -1,8 +1,8 @@
 Summary of changes:
 
-- Restricted the new article creation option in the navigation menu to logged in users only.
+- Added require_same_user method to users controller.
 
-- Added a dropdown with users profile action links.
+- Used require_same_user and require_user methods to restrict certain actions in the users controller.
 
 To note:
 
