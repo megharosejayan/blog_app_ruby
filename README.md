@@ -1,12 +1,13 @@
 Summary of latest changes:
 
-- Navigation partial updated to display "(Admin)" for admin user accounts.
+- Added unit tests for various category model validation specs.
 
-- Article actions (edit and delete) made available to admins for all articles in both for articles index (rendering article partial) and articles show views.
+- Added validations to the category model to make the tests pass.
 
-- Added ability for admin users to delete other user accounts through the users index page.
 
- - Embed ruby code in place of hard-coded 'success' in the messages partial. 'success' is returned if the key ('name') from the flash hash is 'notice' and 'danger' is returned otherwise. This gives the alert message the green or red color depending on the notice type.
+
+
+
  
 To note:
 
