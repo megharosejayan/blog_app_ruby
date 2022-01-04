@@ -1,15 +1,11 @@
-Error while running rails test that says:
+Updates so that only admin can create category
 
-Error:
-CategoriesControllerTest#test_should_get_index:
-ActionView::Template::Error: Error: File to import not found or unreadable: bootstrap-sprockets.
-        on line 1:1 of stdin
- @import "bootstrap-sprockets";
 
-No fix found, but stil works (ie,tests and assertions)
+
+
 
  
-To note:
+To note 1:
 
 Delete method directly doesnt word when passed as (method: :delete)
 
@@ -32,5 +28,17 @@ in routes.rb:
   get '/articles/:id/delete' => 'articles#destroy'
 
 For some reason, this works well and good.
+
+To note 2:
+
+Error while running rails test that says:
+
+Error:
+CategoriesControllerTest#test_should_get_index:
+ActionView::Template::Error: Error: File to import not found or unreadable: bootstrap-sprockets.
+        on line 1:1 of stdin
+ @import "bootstrap-sprockets";
+
+No fix found, but stil works (ie,tests and assertions)
 
 
