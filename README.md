@@ -1,12 +1,12 @@
-Summary of latest changes:
+Error while running rails test that says:
 
-- Added unit tests for various category model validation specs.
+Error:
+CategoriesControllerTest#test_should_get_index:
+ActionView::Template::Error: Error: File to import not found or unreadable: bootstrap-sprockets.
+        on line 1:1 of stdin
+ @import "bootstrap-sprockets";
 
-- Added validations to the category model to make the tests pass.
-
-
-
-
+No fix found, but stil works (ie,tests and assertions)
 
  
 To note:
