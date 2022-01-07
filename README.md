@@ -1,4 +1,4 @@
-Updates so that only admin can create category
+Rails Version 7
 
 
 
